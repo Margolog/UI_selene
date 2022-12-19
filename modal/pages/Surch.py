@@ -5,14 +5,10 @@ from selene.support.shared import browser
 class SearchThings:
     def open_page(self):
         browser.open('https://shop.spacex.com/')
-        return self
-
-
-    def search(self):
         browser.element('[data-action="toggle-search"]').click()
         return self
 
-    def choose(self, things):
+    def choose(self, things: str):
         browser.element('#search-input').type(things)
         return self
 
