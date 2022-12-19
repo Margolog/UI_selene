@@ -8,7 +8,7 @@ class SearchThings:
         browser.element('[data-action="toggle-search"]').click()
         return self
 
-    def search(self, things: str):
+    def search(self, things):
         browser.element('#search-input').type(things)
         return self
 
@@ -39,6 +39,7 @@ class SearchThings:
 
     def fill_country(self, country):
         browser.element('#checkout_shipping_address_address1').type(country)
+        #[data-code="TR"]
         return self
 
     def fill_city(self, city):
@@ -56,3 +57,5 @@ class SearchThings:
     def should_have_text(self,text: str):
         browser.element('.notice__text').should(have.text(text))
         return self
+
+
