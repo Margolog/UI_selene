@@ -1,4 +1,4 @@
-from modal.pages.Surch import SearchThings
+from modal.pages.search import SearchThings
 
 search_things = SearchThings
 
