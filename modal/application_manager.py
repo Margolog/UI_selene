@@ -9,4 +9,4 @@ class ApplicationManager:
         self.payment = Payment()
         self.faqs = FAQS()
         self.privacy_policy = PrivacyPolicy()
-        self.terms_conditions = TermsConditions
+        self.terms_conditions = TermsConditions()
