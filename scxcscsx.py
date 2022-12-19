@@ -1,0 +1,16 @@
+browser.open('https://shop.spacex.com/')
+browser.element('[data-action="toggle-search"]').click()
+browser.element('#search-input').type('Bag')
+
+browser.element('.ProductItem__Wrapper > a[href^="/products/spacex-back-pack"]').click()
+browser.element('[data-hcid="pdp-ac"]').click()
+browser.element('[type="submit"]').click()
+browser.element('[name="checkout[email]"]').type('LogunovaR@mail.com')
+browser.element('#checkout_shipping_address_first_name').type('Margo')
+browser.element('#checkout_shipping_address_last_name').type('Logunova')
+browser.element('#checkout_shipping_address_address1').type('Turkey')
+browser.element('#checkout_shipping_address_city').type('Antalya')
+browser.element('#checkout_shipping_address_phone').type('89111111111')
+browser.element('#continue_button').click()
+browser.element('.notice__text').should(have.text(
+    'Your cart has been updated and the items you added can’t be shipped to your address. Remove the items to complete your order.'))
