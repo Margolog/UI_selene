@@ -2,9 +2,12 @@ from selene import have
 from selene.support.shared import browser
 
 
-class SearchThings:
-    def open_page(self):
+class Payment:
+    def open_main(self):
         browser.open('https://shop.spacex.com/')
+        return self
+
+    def search_click(self):
         browser.element('[data-action="toggle-search"]').click()
         return self
 
@@ -16,7 +19,7 @@ class SearchThings:
         browser.element('.ProductItem__Wrapper > a[href^="/products/spacex-back-pack"]').click()
         return self
 
-    def add_things(self):
+    def add(self):
         browser.element('[data-hcid="pdp-ac"]').click()
         return self
 
@@ -33,13 +36,11 @@ class SearchThings:
         return self
 
     def fill_last_name(self, last_name):
-        browser.element('#checkout_shipping_address_first_name').type(last_name)
+        browser.element('#checkout_shipping_address_last_name').type(last_name)
         return self
-
 
     def fill_country(self, country):
         browser.element('#checkout_shipping_address_address1').type(country)
-        #[data-code="TR"]
         return self
 
     def fill_city(self, city):
@@ -50,12 +51,11 @@ class SearchThings:
         browser.element('#checkout_shipping_address_phone').type(phone)
         return self
 
-    def clik_continue(self):
+    def switch(self):
         browser.element('#continue_button').click()
         return self
 
-    def should_have_text(self,text: str):
-        browser.element('.notice__text').should(have.text(text))
+    def should_have_text(self, text: str):
+        browser.config.timeout = 30
+        browser.element('.breadcrumb__item.breadcrumb__item--blank').should(have.text(text))
         return self
-
-
