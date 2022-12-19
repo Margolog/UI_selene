@@ -8,7 +8,7 @@ class SearchThings:
         browser.element('[data-action="toggle-search"]').click()
         return self
 
-    def choose(self, things: str):
+    def search(self, things: str):
         browser.element('#search-input').type(things)
         return self
 
