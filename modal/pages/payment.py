@@ -2,6 +2,7 @@ from selene import have
 from selene.support.shared import browser
 
 
+
 class Payment:
     def open_main(self):
         browser.open('https://shop.spacex.com/')
@@ -31,6 +32,10 @@ class Payment:
         browser.element('[name="checkout[email]"]').type(email)
         return self
 
+    def fill_region(self):
+        browser.element('.field__input--select').click()
+        browser.element('[data-code="TR"]').click()
+
     def fill_name(self, name):
         browser.element('#checkout_shipping_address_first_name').type(name)
         return self
@@ -42,6 +47,11 @@ class Payment:
     def fill_country(self, country):
         browser.element('#checkout_shipping_address_address1').type(country)
         return self
+
+    def fill_code(self, code):
+        browser.element('#checkout_shipping_address_zip').type(code)
+        return self
+
 
     def fill_city(self, city):
         browser.element('#checkout_shipping_address_city').type(city)

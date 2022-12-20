@@ -7,7 +7,7 @@ from modal.data.user import Margo
 @allure.tag("web")
 @allure.severity(Severity.CRITICAL)
 @allure.feature("Page payment")
-@allure.title('Switch on payment page')
+@allure.title('Switch on Payment Page')
 def test_payment_page(app: ApplicationManager):
     with allure.step('Open main'):
         app.payment.open_main()
@@ -21,9 +21,11 @@ def test_payment_page(app: ApplicationManager):
         app.payment.go_checkout()
     with allure.step('Fill form'):
         app.payment.fill_email(Margo.email)
+        app.payment.fill_region()
         app.payment.fill_name(Margo.name)
         app.payment.fill_last_name(Margo.last_name)
         app.payment.fill_country(Margo.country)
+        app.payment.fill_code(Margo.code)
         app.payment.fill_city(Margo.city)
         app.payment.fill_phone(Margo.phone)
     with allure.step('Switch on payment'):
@@ -34,7 +36,7 @@ def test_payment_page(app: ApplicationManager):
 @allure.tag("web")
 @allure.severity(Severity.NORMAL)
 @allure.feature("Page faqs")
-@allure.title('Switch on faqs page')
+@allure.title('Switch on Faqs Page')
 def test_faqs(app: ApplicationManager):
     app.faqs.open_main()
     app.faqs.scroll()

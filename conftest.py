@@ -1,16 +1,16 @@
 import os
 import pytest
 from dotenv import load_dotenv
-from utils import attach
-from selene.support import webdriver
 from selene.support.shared import browser
+from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from modal.application_manager import ApplicationManager
 
+from modal.application_manager import ApplicationManager
+from utils import attach
 
 
 @pytest.fixture(scope='function', autouse=True)
-def browser_management():
+def setup_browser():
     browser.config.timeout = 5
     browser.config.window_width, browser.config.window_height = 1920, 1024
 
