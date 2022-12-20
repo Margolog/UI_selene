@@ -66,7 +66,7 @@
   <img src="resources/images/dashboards.jpg" alt="Allure TestOps"/>
 </p>
 
-## Интеграция с [Jira](https://jira.autotests.cloud/browse/HOMEWORK-470)
+## Интеграция с Jira
 <p align="center">
   <img src="resources/images/jira.jpg" alt="Jira"/>
 </p>
