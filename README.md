@@ -15,8 +15,8 @@
 <img width="6%" title="Pytest" src="https://github.com/Margolog/diplom_API/blob/master/resources/pytest.png">
 <img width="5%" title="PyCharm" src="https://github.com/Margolog/diplom_API/blob/master/resources/pycharm.png">
 <img width="6%" title="Jenkins" src="https://github.com/Margolog/diplom_API/blob/master/resources/jenkins.svg">
-<img width="6%" title="Allure TestOps" src="https://github.com/Margolog/diplom_API/blob/master/resources/allure_testops.png">
-<img width="6%" title="Allure" src="https://github.com/Margolog/diplom_API/blob/master/resources/allure_report.png">
+<img width="6%" title="Allure TestOps" src="https://github.com/Margolog/diplom_UI/blob/master/resources/allure_testops.png">
+<img width="6%" title="Allure" src="https://github.com/Margolog/diplom_UI/blob/master/resources/allure_report.png">
 <img width="6%" title="Selene" src="https://github.com/Margolog/diplom_API/blob/master/resources/selene.png">
 <img width="6%" title="Telegram" src="https://github.com/Margolog/diplom_UI/blob/master/resources/tg.png">
 </p>
