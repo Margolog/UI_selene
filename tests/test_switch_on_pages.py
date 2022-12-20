@@ -38,10 +38,12 @@ def test_payment_page(app: ApplicationManager):
 @allure.feature("Page faqs")
 @allure.title('Switch on Faqs Page')
 def test_faqs(app: ApplicationManager):
-    app.faqs.open_main()
+    with allure.step('Open main'):
+        app.faqs.open_main()
     app.faqs.scroll()
-    app.faqs.switch()
-    app.faqs.should_have_text()
+    with allure.step('Open faqs'):
+        app.faqs.switch()
+        app.faqs.should_have_text()
 
 
 @allure.tag("web")
@@ -49,17 +51,21 @@ def test_faqs(app: ApplicationManager):
 @allure.feature("Page Privacy Policy")
 @allure.title('Switch on Privacy Policy page')
 def test_privacy_policy(app: ApplicationManager):
-    app.privacy_policy.open_main()
-    app.privacy_policy.scroll()
-    app.privacy_policy.switch()
-    app.privacy_policy.should_have_text()
+    with allure.step('Open main'):
+        app.privacy_policy.open_main()
+        app.privacy_policy.scroll()
+    with allure.step('Open privacy policy'):
+        app.privacy_policy.switch()
+        app.privacy_policy.should_have_text()
 
 @allure.tag("web")
 @allure.severity(Severity.NORMAL)
 @allure.feature("Page Terms Conditions")
 @allure.title('Switch on Terms Conditions page')
 def test_terms_conditions(app: ApplicationManager):
-    app.terms_conditions.open_main()
-    app.terms_conditions.scroll()
-    app.terms_conditions.switch()
-    app.terms_conditions.should_have_text()
+    with allure.step('Open main'):
+        app.terms_conditions.open_main()
+        app.terms_conditions.scroll()
+    with allure.step('Open terms conditions page'):
+        app.terms_conditions.switch()
+        app.terms_conditions.should_have_text()
