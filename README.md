@@ -66,6 +66,11 @@
   <img src="resources/images/dashboards.jpg" alt="Allure TestOps"/>
 </p>
 
+## Интеграция с [Jira](https://jira.autotests.cloud/browse/HOMEWORK-470)
+<p align="center">
+  <img src="resources/images/jira.jpg" alt="Jira"/>
+</p>
+
 
 ## Уведомление в Telegram
 <p align="center">
