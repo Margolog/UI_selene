@@ -1,7 +1,7 @@
 import allure
 from allure_commons.types import Severity
-from modal.application_manager import ApplicationManager
-from modal.data.user import Margo
+from model.application_manager import ApplicationManager
+from model.data.user import Margo
 
 
 @allure.tag("web")

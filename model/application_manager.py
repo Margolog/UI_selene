@@ -1,7 +1,7 @@
-from modal.pages.faqs import FAQS
-from modal.pages.payment import Payment
-from modal.pages.privacy_policy import PrivacyPolicy
-from modal.pages.terms_conditions import TermsConditions
+from model.pages.faqs import FAQS
+from model.pages.payment import Payment
+from model.pages.privacy_policy import PrivacyPolicy
+from model.pages.terms_conditions import TermsConditions
 
 
 class ApplicationManager:

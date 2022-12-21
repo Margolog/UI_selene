@@ -5,7 +5,7 @@ from selene.support.shared import browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-from modal.application_manager import ApplicationManager
+from model.application_manager import ApplicationManager
 from utils import attach
 
 
