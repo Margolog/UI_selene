@@ -1,10 +1,12 @@
+import allure
 from selene import command, have
 from selene.support.shared import browser
 
 
 class TermsConditions:
     def open_main(self):
-        browser.open('https://shop.spacex.com/')
+        with allure.step('Open main'):
+            browser.open('https://shop.spacex.com/')
         return self
 
     def scroll(self):
@@ -12,7 +14,8 @@ class TermsConditions:
         return self
 
     def switch(self):
-        browser.element('.Linklist__Item > a[href="/policies/terms-of-service"]').click()
+        with allure.step('Open terms conditions page'):
+            browser.element('.Linklist__Item > a[href="/policies/terms-of-service"]').click()
         return self
 
     def should_have_text(self):

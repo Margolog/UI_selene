@@ -1,3 +1,4 @@
+import allure
 from selene import have
 from selene.support.shared import browser
 
@@ -5,11 +6,13 @@ from selene.support.shared import browser
 
 class Payment:
     def open_main(self):
-        browser.open('https://shop.spacex.com/')
+        with allure.step('Open main'):
+            browser.open('https://shop.spacex.com/')
         return self
 
     def search_click(self):
-        browser.element('[data-action="toggle-search"]').click()
+        with allure.step('Search things'):
+            browser.element('[data-action="toggle-search"]').click()
         return self
 
     def search(self, things):
@@ -17,11 +20,13 @@ class Payment:
         return self
 
     def choose_things(self):
-        browser.element('.ProductItem__Wrapper > a[href^="/products/spacex-back-pack"]').click()
+        with allure.step('Choose various'):
+            browser.element('.ProductItem__Wrapper > a[href^="/products/spacex-back-pack"]').click()
         return self
 
     def add(self):
-        browser.element('[data-hcid="pdp-ac"]').click()
+        with allure.step('Add things'):
+            browser.element('[data-hcid="pdp-ac"]').click()
         return self
 
     def go_checkout(self):
@@ -29,7 +34,8 @@ class Payment:
         return self
 
     def fill_email(self, email):
-        browser.element('[name="checkout[email]"]').type(email)
+        with allure.step('Fill form'):
+            browser.element('[name="checkout[email]"]').type(email)
         return self
 
     def fill_region(self):
@@ -62,7 +68,8 @@ class Payment:
         return self
 
     def switch(self):
-        browser.element('#continue_button').click()
+        with allure.step('Switch on payment'):
+            browser.element('#continue_button').click()
         return self
 
     def should_have_text(self, text: str):
