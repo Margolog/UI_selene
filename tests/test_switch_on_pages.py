@@ -1,7 +1,7 @@
 import allure
 from allure_commons.types import Severity
 from model.application_manager import ApplicationManager
-from model.data.user import Margo
+from model.data.user import margo
 from utils.allure_labels import allure_labels
 
 
@@ -11,18 +11,17 @@ def test_payment_page(app: ApplicationManager):
                   title='Switch on Payment Page')
 
     (
-        app.payment.search_click()
-        .search(Margo.things)
+        app.payment.search(margo.things)
         .choose_things()
         .add()
         .go_checkout()
-        .fill_form(Margo.email, Margo.name, Margo.last_name, Margo.country, Margo.code, Margo.city,
-                   Margo.phone)
+        .fill_form(margo.email, margo.name, margo.last_name, margo.country, margo.code, margo.city,
+                   margo.phone)
         .switch()
     )
 
 
-    app.payment.should_have_text(Margo.text)
+    app.payment.should_have_text(margo.text)
 
 
 @allure.severity(Severity.NORMAL)

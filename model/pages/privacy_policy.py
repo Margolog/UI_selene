@@ -3,7 +3,7 @@ from selene import command, have
 from selene.support.shared import browser
 
 
-class PrivacyPolicy:
+class PrivacyPolicyPage:
 
     def switch(self):
         with allure.step('Open privacy policy'):

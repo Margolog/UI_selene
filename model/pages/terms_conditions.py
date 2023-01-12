@@ -3,7 +3,7 @@ from selene import command, have
 from selene.support.shared import browser
 
 
-class TermsConditions:
+class TermsConditionsPage:
     def switch(self):
         with allure.step('Open terms conditions page'):
             browser.element('.Linklist__Item > a[href="/policies/terms-of-service"]').perform(

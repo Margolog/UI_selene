@@ -3,7 +3,7 @@ from selene import command, have
 from selene.support.shared import browser
 
 
-class FAQS:
+class FAQSPage:
 
 
     def switch(self):

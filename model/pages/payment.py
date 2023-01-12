@@ -4,19 +4,10 @@ from selene.support.shared import browser
 
 
 
-class Payment:
-    def open_main(self):
-        with allure.step('Open main'):
-            browser.open('https://shop.spacex.com/')
-        return self
-
-
-    def search_click(self):
-        with allure.step('Search things'):
-            browser.element('[data-action="toggle-search"]').click()
-        return self
+class PaymentPage:
 
     def search(self, things):
+        browser.element('[data-action="toggle-search"]').click()
         browser.element('#search-input').type(things)
         return self
 

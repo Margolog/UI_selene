@@ -14,7 +14,7 @@ class User:
     text: str
 
 
-Margo = User(things='Bag', email='LogunovaR@mail.com', name='Margo', last_name='Logunova', country='Turkey',
+margo = User(things='Bag', email='LogunovaR@mail.com', name='Margo', last_name='Logunova', country='Turkey',
              code=123456,
              city='Antalya', phone='89111111111',
              text='Payment')
