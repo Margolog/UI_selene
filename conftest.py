@@ -4,24 +4,40 @@ from dotenv import load_dotenv
 from selene.support.shared import browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-
 from model.application_manager import ApplicationManager
+from model.pages.main import MainPage
 from utils import attach
 
 
+DEFAULT_BROWSER_VERSION = "100.0"
+
+
+def pytest_addoption(parser):
+    parser.addoption(
+        '--browser_version',
+        default='100.0'
+    )
+
+
+@pytest.fixture(scope='session', autouse=True)
+def load_env():
+    load_dotenv()
+
+
 @pytest.fixture(scope='function', autouse=True)
-def setup_browser():
+def setup_browser(request):
     browser.config.timeout = 5
     browser.config.window_width, browser.config.window_height = 1920, 1024
 
-    load_dotenv()
     login = os.getenv('LOGIN')
     password = os.getenv('PASSWORD')
 
+    browser_version = request.config.getoption('--browser_version')
+    browser_version = browser_version if browser_version != "" else DEFAULT_BROWSER_VERSION
     options = Options()
     selenoid_capabilities = {
         "browserName": "chrome",
-        "browserVersion": "100.0",
+        "browserVersion": browser_version,
         "selenoid:options": {
             "enableVNC": True,
             "enableVideo": True
@@ -41,11 +57,11 @@ def setup_browser():
     attach.add_screenshot(browser)
     attach.add_logs(browser)
     attach.add_video(browser)
+
     browser.quit()
 
 
 @pytest.fixture(scope='function')
 def app() -> ApplicationManager:
-    browser.open('https://shop.spacex.com/')
     _app = ApplicationManager()
     return _app

@@ -10,6 +10,7 @@ def test_payment_page(app: ApplicationManager):
     allure_labels(feature='Page payment',
                   title='Switch on Payment Page')
 
+    app.main.open()
     (
         app.payment.search(margo.things)
         .choose_things()
@@ -20,7 +21,6 @@ def test_payment_page(app: ApplicationManager):
         .switch()
     )
 
-
     app.payment.should_have_text(margo.text)
 
 
@@ -29,9 +29,8 @@ def test_faqs(app: ApplicationManager):
     allure_labels(feature='Page faqs',
                   title='Switch on Faqs Page')
 
-    (
-        app.faqs.switch()
-    )
+    app.main.open()
+    (app.faqs.switch())
 
     app.faqs.should_have_text()
 
@@ -40,9 +39,9 @@ def test_faqs(app: ApplicationManager):
 def test_privacy_policy(app: ApplicationManager):
     allure_labels(feature='Page Privacy Policy',
                   title='Switch on Privacy Policy page')
-    (
-        app.privacy_policy.switch()
-    )
+
+    app.main.open()
+    (app.privacy_policy.switch())
 
     app.privacy_policy.should_have_text()
 
@@ -52,8 +51,8 @@ def test_privacy_policy(app: ApplicationManager):
 def test_terms_conditions(app: ApplicationManager):
     allure_labels(feature='Page Terms Conditions',
                   title='Switch on Terms Conditions page')
-    (
-        app.terms_conditions.switch()
-    )
+
+    app.main.open()
+    (app.terms_conditions.switch())
 
     app.terms_conditions.should_have_text()
