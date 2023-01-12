@@ -10,6 +10,7 @@ class Payment:
             browser.open('https://shop.spacex.com/')
         return self
 
+
     def search_click(self):
         with allure.step('Search things'):
             browser.element('[data-action="toggle-search"]').click()
@@ -33,38 +34,17 @@ class Payment:
         browser.element('[type="submit"]').click()
         return self
 
-    def fill_email(self, email):
+    def fill_form(self, email, name, last_name, country, code, city, phone):
         with allure.step('Fill form'):
             browser.element('[name="checkout[email]"]').type(email)
-        return self
-
-    def fill_region(self):
-        browser.element('.field__input--select').click()
-        browser.element('[data-code="TR"]').click()
-
-    def fill_name(self, name):
-        browser.element('#checkout_shipping_address_first_name').type(name)
-        return self
-
-    def fill_last_name(self, last_name):
-        browser.element('#checkout_shipping_address_last_name').type(last_name)
-        return self
-
-    def fill_country(self, country):
-        browser.element('#checkout_shipping_address_address1').type(country)
-        return self
-
-    def fill_code(self, code):
-        browser.element('#checkout_shipping_address_zip').type(code)
-        return self
-
-
-    def fill_city(self, city):
-        browser.element('#checkout_shipping_address_city').type(city)
-        return self
-
-    def fill_phone(self, phone):
-        browser.element('#checkout_shipping_address_phone').type(phone)
+            browser.element('.field__input--select').click()
+            browser.element('[data-code="TR"]').click()
+            browser.element('#checkout_shipping_address_first_name').type(name)
+            browser.element('#checkout_shipping_address_last_name').type(last_name)
+            browser.element('#checkout_shipping_address_address1').type(country)
+            browser.element('#checkout_shipping_address_zip').type(code)
+            browser.element('#checkout_shipping_address_city').type(city)
+            browser.element('#checkout_shipping_address_phone').type(phone)
         return self
 
     def switch(self):

@@ -4,17 +4,10 @@ from selene.support.shared import browser
 
 
 class PrivacyPolicy:
-    def open_main(self):
-        with allure.step('Open main'):
-            browser.open('https://shop.spacex.com/')
-        return self
-
-    def scroll(self):
-        browser.element('.Linklist__Item > a[href="/policies/privacy-policy"]').perform(command.js.scroll_into_view)
-        return self
 
     def switch(self):
         with allure.step('Open privacy policy'):
+            browser.element('.Linklist__Item > a[href="/policies/privacy-policy"]').perform(command.js.scroll_into_view)
             browser.element('.Linklist__Item > a[href="/policies/privacy-policy"]').click()
         return self
 

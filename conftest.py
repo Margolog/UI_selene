@@ -46,5 +46,6 @@ def setup_browser():
 
 @pytest.fixture(scope='function')
 def app() -> ApplicationManager:
+    browser.open('https://shop.spacex.com/')
     _app = ApplicationManager()
     return _app
