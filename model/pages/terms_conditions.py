@@ -11,6 +11,6 @@ class TermsConditionsPage:
             browser.element('.Linklist__Item > a[href="/policies/terms-of-service"]').click()
         return self
 
-    def should_have_text(self):
-        browser.element('.shopify-policy__title').should(have.text('Terms of service'))
+    def should_have(self, expected_text: str):
+        browser.element('.shopify-policy__title').should(have.text(expected_text))
         return self

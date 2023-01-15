@@ -6,18 +6,16 @@ from selene.support.shared import browser
 
 class PaymentPage:
 
-    def search(self, things):
-        browser.element('[data-action="toggle-search"]').click()
-        browser.element('#search-input').type(things)
-        return self
-
-    def choose_things(self):
+    def search_and_choose_things(self, things):
         with allure.step('Choose various'):
+            browser.element('[data-action="toggle-search"]').click()
+            browser.element('#search-input').type(things)
             browser.element('.ProductItem__Wrapper > a[href^="/products/spacex-back-pack"]').click()
         return self
 
-    def add(self):
-        with allure.step('Add things'):
+
+    def add_goods(self):
+        with allure.step('Add goods'):
             browser.element('[data-hcid="pdp-ac"]').click()
         return self
 
@@ -38,12 +36,12 @@ class PaymentPage:
             browser.element('#checkout_shipping_address_phone').type(phone)
         return self
 
-    def switch(self):
+    def go_next_page(self):
         with allure.step('Switch on payment'):
             browser.element('#continue_button').click()
         return self
 
-    def should_have_text(self, text: str):
+    def should_have(self, expected_text: str):
         browser.config.timeout = 30
-        browser.element('.breadcrumb__item.breadcrumb__item--blank').should(have.text(text))
+        browser.element('.breadcrumb__item.breadcrumb__item--blank').should(have.text(expected_text))
         return self

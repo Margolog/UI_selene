@@ -12,6 +12,6 @@ class PrivacyPolicyPage:
         return self
 
 
-    def should_have_text(self):
-        browser.element('.shopify-policy__title').should(have.text('Privacy policy'))
+    def should_have(self, expected_text: str):
+        browser.element('.shopify-policy__title').should(have.text(expected_text))
         return self

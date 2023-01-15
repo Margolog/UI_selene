@@ -1,6 +1,7 @@
 import allure
 from allure_commons.types import Severity
 from model.application_manager import ApplicationManager
+from model.data.title_text import *
 from model.data.user import margo
 from utils.allure_labels import allure_labels
 
@@ -12,16 +13,15 @@ def test_payment_page(app: ApplicationManager):
 
     app.main.open()
     (
-        app.payment.search(margo.things)
-        .choose_things()
-        .add()
+        app.payment.search_and_choose_things(margo.things)
+        .add_goods()
         .go_checkout()
         .fill_form(margo.email, margo.name, margo.last_name, margo.country, margo.code, margo.city,
                    margo.phone)
-        .switch()
+        .go_next_page()
     )
 
-    app.payment.should_have_text(margo.text)
+    app.payment.should_have(payment.expected_text)
 
 
 @allure.severity(Severity.NORMAL)
@@ -32,7 +32,7 @@ def test_faqs(app: ApplicationManager):
     app.main.open()
     (app.faqs.switch())
 
-    app.faqs.should_have_text()
+    app.faqs.should_have(faqs.expected_text)
 
 
 @allure.severity(Severity.NORMAL)
@@ -43,7 +43,7 @@ def test_privacy_policy(app: ApplicationManager):
     app.main.open()
     (app.privacy_policy.switch())
 
-    app.privacy_policy.should_have_text()
+    app.privacy_policy.should_have(policy.expected_text)
 
 
 
@@ -55,4 +55,4 @@ def test_terms_conditions(app: ApplicationManager):
     app.main.open()
     (app.terms_conditions.switch())
 
-    app.terms_conditions.should_have_text()
+    app.terms_conditions.should_have(limitation.expected_text)

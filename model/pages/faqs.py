@@ -13,6 +13,6 @@ class FAQSPage:
         return self
 
 
-    def should_have_text(self):
-        browser.element('.u-h1').should(have.text('FAQS'))
+    def should_have(self, expected_text: str):
+        browser.element('.u-h1').should(have.text(expected_text))
         return self

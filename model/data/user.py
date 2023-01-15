@@ -11,10 +11,10 @@ class User:
     code: str
     city: str
     phone: str
-    text: str
+    # text: str
 
 
 margo = User(things='Bag', email='LogunovaR@mail.com', name='Margo', last_name='Logunova', country='Turkey',
              code=123456,
-             city='Antalya', phone='89111111111',
-             text='Payment')
+             city='Antalya', phone='89111111111')
+             # , text='Payment')
