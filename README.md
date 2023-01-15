@@ -7,7 +7,7 @@
 - [Отчеты](#bar_chart-отчеты-о-прохождении-тестов-доступны-в-allure)
 - - [Allure](#-allure)
 - - [Telegram](#-telegram)
-- [Allure TestOps](#-проект-интегрирован-с-allure-testOps)
+- - [Allure TestOps](#-проект-интегрирован-с-allure-testOps)
 
 ## :gear: В проекте используются следующие технологии и инструменты:
 <p align="center">
