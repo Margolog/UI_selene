@@ -50,10 +50,6 @@
 </p>
 
 
-#### Графики
-<p align="center">
-  <img src="resources/images/graf.jpg" alt="Allure report"/>
-</p>
 
 ## Интеграция с [Allure TestOps](https://allure.autotests.cloud/project/1760/dashboards)
 ### Тест-кейсы
